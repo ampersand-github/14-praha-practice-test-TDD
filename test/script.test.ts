@@ -1,14 +1,12 @@
-import { multiply, sum } from "../src/multiply";
+import { convertStringListToNumberList } from "../src/utils/convertStringListToNumberList";
+import { add } from "../src/add";
 
-/*
-test("fizzbuzzのユニットテスト", () => {
-  expect(multiply(1)).toBe(1);
-});
-// npm install -D  @types/node
-
- */
-
-test("basic again", () => {
-  console.log("AAAAA");
-  expect(sum(1, 2)).toBe(3);
+describe("scriptのテスト", () => {
+  test("convertNumberList", () => {
+    expect(convertStringListToNumberList(["1", "2"])).toStrictEqual([1, 2]);
+    expect(() => {
+      convertStringListToNumberList(["a", "2"]);
+    }).toThrowError();
+  });
+  test("argLengthWithinRange", () => {});
 });

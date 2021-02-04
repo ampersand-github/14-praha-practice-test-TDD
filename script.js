@@ -1,36 +1,59 @@
-import { convertStringListToNumberList } from "./src/utils/convertStringListToNumberList";
-import { argLengthWithinRange } from "./src/utils/argLengthWithinRange";
-
-type argsType = "multiply" | "add" | "subtract" | "divide";
-
 // npx tsc script.ts; node script.js add
 // npx tsc script.ts; node script.js aaaa bbbb cccc dddd eeeee
 console.log(" - - - script - - - ");
-
-const secondArg: argsType = process.argv[2] as argsType;
-const _ = process.argv.splice(0, 2);
-
-const thirdOrLaterArgs = convertStringListToNumberList(_);
-argLengthWithinRange(thirdOrLaterArgs, 30, 0);
-
+var secondArg = process.argv[2];
+var args = process.argv.splice(0, 2);
 switch (secondArg) {
-  case "add":
-    console.log("add");
-    break;
-  case "multiply":
-    console.log("multiply");
-    break;
-  case "subtract":
-    console.log("subtract");
-    break;
-  case "divide":
-    console.log("divide");
-    break;
-  default:
-    console.log("引数が間違っています");
+    case "add":
+        console.log("add");
+        break;
+    case "multiply":
+        console.log("multiply");
+        break;
+    case "subtract":
+        console.log("subtract");
+        break;
+    case "divide":
+        console.log("divide");
+        break;
+    default:
+        console.log("引数が間違っています");
+}
+/*
+
+export const script = (args: string[]) => {
+  console.log(args);
+  const secondArg: argsType = process.argv[2] as argsType;
+  return "true";
+};
+export const aaa = () => {
+  return "true";
+};
+
+console.log(script(["a", "n"]));
+ */
+/*
+const action: argsType = process.argv[2] as argsType;
+const args = process.argv.splice(0, 2);
+
+
+console.log(process.argv);
+console.log(args);
+
+export const script = () => {
+  console.log(process.argv[2]);
+  const secondArg: argsType = process.argv[2] as argsType;
+  return "true";
+};
+ */
+/*
+if (process.argv[2] === argsType) {
+  multiply(1);
+} else {
+  console.log("引数エラー");
 }
 
-/*
+
 ts-node script.ts
 node script.js multiply 3 10 3 // 90を返す
 node script.js add 3 10 3 // 16を返す
