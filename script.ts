@@ -11,7 +11,7 @@ const secondArg: argsType = process.argv[2] as argsType;
 //
 const _ = process.argv.filter((value, index) => {
   if (index === 0 || index === 1 || index === 2) {
-    //
+    //　ほしい情報は引数3つめ移行
   } else {
     return value;
   }
